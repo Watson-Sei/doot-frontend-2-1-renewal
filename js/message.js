@@ -62,3 +62,19 @@ function botMessage(message) {
     let div = document.getElementById("chat");
     div.append(div1);
 }
+
+// ボタンによるメッセージ送信
+document.getElementById("sendBtn").onclick = function() {
+    sendMessage();
+}
+
+// 日本語対応のEnter送信イベント
+let messageInput = document.getElementById("message");
+messageInput.addEventListener('keypress', enterEvent)
+
+function enterEvent(e) {
+    if (e.keyCode === 13) {
+        sendMessage();
+    }
+    return false
+}
